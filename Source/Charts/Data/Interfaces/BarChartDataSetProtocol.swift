@@ -12,6 +12,10 @@
 import Foundation
 import CoreGraphics
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 @objc
 public protocol BarChartDataSetProtocol: BarLineScatterCandleBubbleChartDataSetProtocol
 {
@@ -39,4 +43,7 @@ public protocol BarChartDataSetProtocol: BarLineScatterCandleBubbleChartDataSetP
     
     /// array of labels used to describe the different values of the stacked bars
     var stackLabels: [String] { get set }
+    
+    /// array of corners to be rounded
+    var roundedCorners: UIRectCorner { get set }
 }
